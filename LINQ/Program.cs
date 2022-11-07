@@ -8,16 +8,14 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            List<string> bookNames = new List<string>
-            { "black boy", "blueprint for black power", "the isis papers",
+            var bookList = new List<string>() { "black boy", "blueprint for black power", "the isis papers",
                 "afrikan holistic health"};
 
-            IEnumerable<string> longBookNames =
-                bookNames.Where(name => name.Contains("a"));
+            var bookNames = bookList.OrderBy(name => name.Length).ToList(); 
 
-            foreach (var o in bookNames)
+            foreach (var book in bookNames)
             {
-                Console.WriteLine(o);
+                Console.WriteLine(book);
             }
 
         }
